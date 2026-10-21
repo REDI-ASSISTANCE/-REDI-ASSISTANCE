@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REDI-ASSISTANCE</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
+}
+
+header {
+  background: #151d32;
+  padding: 22px 15px;
+  text-align: center;
+  border-bottom: 2px solid #4f8cff;
+}
+
+header h1 {
+  margin: 0;
+  color: #72a5ff;
+}
+
+header p {
+  margin-bottom: 0;
+  color: #cbd5e1;
+}
+
+main {
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 15px;
+}
+
+.card {
+  background: #151d32;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: #72a5ff;
+}
+
+textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #45516b;
+  background: #0b1020;
+  color: white;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #3978f6;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#reponse {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  color: #94a3b8;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>REDI-ASSISTANCE</h1>
+  <p>Ton assistant intelligent personnel</p>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>Bienvenue !</h2>
+    <p>Je suis REDI-ASSISTANCE, ton futur assistant IA.</p>
+    <p>Cette première version est une interface de démonstration.</p>
+  </section>
+
+  <section class="card">
+    <h2>Écris ton message</h2>
+
+    <textarea id="message"
+      placeholder="Que veux-tu demander à REDI-ASSISTANCE ?"></textarea>
+
+    <button onclick="repondre()">Envoyer</button>
+
+    <h3>Réponse de REDI-ASSISTANCE</h3>
+    <div id="reponse">Je suis prêt à recevoir ton message.</div>
+  </section>
+
+</main>
+
+<footer>
+  REDI-ASSISTANCE © 2026
+</footer>
+
+<script>
+function repondre() {
+  const message = document
+    .getElementById("message")
+    .value.trim();
+
+  const reponse = document.getElementById("reponse");
+
+  if (!message) {
+    reponse.textContent = "Écris d'abord un message.";
+    return;
+  }
+
+  reponse.textContent =
+    "Ton message : " + message +
+    "\n\nREDI-ASSISTANCE est en cours de configuration. " +
+    "La connexion à un véritable modèle d'intelligence artificielle " +
+    "sera ajoutée dans une prochaine étape.";
+}
+</script>
+
+</body>
+</html>
